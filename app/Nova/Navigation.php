@@ -4,6 +4,7 @@ namespace App\Nova;
 
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsTo;
+use Laravel\Nova\Fields\Boolean;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Number;
 use Laravel\Nova\Fields\Text;
@@ -72,6 +73,8 @@ class Navigation extends Resource
             Number::make(__('Page REf'), 'page_id')->nullable(),
             Number::make(__('Category REf'), 'category_id')->nullable(),
             Number::make(__('Order'), 'order')->default(0),
+            Boolean::make(__('Nav'), "nav")
+                ->sortable(),
             BelongsTo::make(__('Navigation'), 'navigation')->nullable()
 
         ];

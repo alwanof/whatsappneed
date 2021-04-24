@@ -22,8 +22,4 @@ Route::get('/', function () {
 Route::get('order/{slug}', 'OrderController@index');
 Route::get('clear/test', 'TestController@go');
 
-Route::get('/test', function () {
-    $item = Item::findOrFail(17);
-
-    return implode(', ', $item->categories()->pluck('title_a')->toArray());
-});
+Route::get('/test', 'TestController@testo');

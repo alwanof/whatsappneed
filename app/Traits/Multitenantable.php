@@ -4,7 +4,11 @@ namespace App\Traits;
 
 
 use App\User;
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Session;
 
 trait Multitenantable
 {
@@ -73,6 +77,12 @@ trait Multitenantable
                         case 2:
                             if ($table == 'users') {
                                 $builder->where('id', auth()->id());
+                                if (auth()->user()->expiration_date) {
+                                    $now = Carbon::now()->toDateTimeString();
+                                    $builder->where('expiration_date', '>=', $now);
+                                    Session::flash('expired', 'You have been logged out!');
+                                    Auth::logout();
+                                }
                             } else {
                                 $builder->where('user_id', auth()->id())
                                     ->orWhere('id', auth()->id());

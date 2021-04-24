@@ -19,6 +19,9 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 Route::group(['prefix' => '/v1'], function () {
     Route::get('categories', 'API\CategoryController@index');
+    Route::get('nav', 'API\NavigationController@index'); // new 24 04
+    Route::get('topnav', 'API\NavigationController@topnav'); // new 24 04
+    Route::get('payment/{amount}', 'API\NavigationController@payment'); // new 23 04
     Route::get('categories/{id}/items', 'API\CategoryController@categoryItems');
     Route::get('items', 'API\ItemController@index');
     Route::get('items/{id}', 'API\ItemController@show');
@@ -27,6 +30,7 @@ Route::group(['prefix' => '/v1'], function () {
     Route::post('order/create', 'API\OrderController@save');
     Route::get('sliders', 'API\SliderController@index');
     Route::get('pages', 'API\PageController@index');
+    Route::get('pages/{id}', 'API\PageController@show'); // new 24 04;
 
     Route::get('/app/get/order/{hash}', 'API\OrderController@driverOrder');
 

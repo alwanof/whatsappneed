@@ -31,4 +31,9 @@ class PageController extends Controller
         $pages = PageResource::collection($page->paginate($limit));
         return $pages->response()->setStatusCode(200);
     }
+    public function show($id)
+    {
+        $page = Page::findOrFail($id);
+        return response($page, 200);
+    }
 }

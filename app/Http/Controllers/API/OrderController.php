@@ -4,10 +4,12 @@ namespace App\Http\Controllers\API;
 
 use App\Driver;
 use App\Http\Controllers\Controller;
+use App\Mail\CompanyInvoice;
 use App\Order;
 use App\Parse\Stream;
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Str;
 
 class OrderController extends Controller
@@ -19,13 +21,13 @@ class OrderController extends Controller
             'restID' => 'required',
             'indoor' => 'required|min:0|max:1',
             'name' => 'required|string',
-            'phone' => 'required',
-            'address' => 'required',
-            'dist' => 'required',
-            'aprt' => 'required',
-            'house' => 'required',
-            'lat' => 'required',
-            'lng' => 'required',
+            //'phone' => 'required',
+            //'address' => 'required',
+            //'dist' => 'required',
+            //'aprt' => 'required',
+            //'house' => 'required',
+            //'lat' => 'required',
+            //'lng' => 'required',
             'total' => 'required',
             'items' => 'required',
         ]);
@@ -53,6 +55,7 @@ class OrderController extends Controller
         $order->bell = $request->bell ?? null;
         $order->lat = $request->lat;
         $order->lng = $request->lng;
+        $order->items = json_encode($this->itemsArray($request->items));
         $order->total = $request->total;
         $order->status = 0;
         $order->note_a = $request->note ?? null;
@@ -61,11 +64,33 @@ class OrderController extends Controller
 
         $order->save();
         if ($rest->settings['whatsapp_off'] == 1) {
+            $this->sendOrder2Admin($request, $order);
             return response(__('core.thanks_msg'), 200);
         }
 
 
         return response($this->waMsg($request, $order), 200);
+    }
+    private function itemsArray($items)
+    {
+        $items = explode('#', $items);
+        $res = [];
+        foreach ($items as $item) {
+            $element = explode('@', $item);
+            $res[] = [
+                'item' => $element[0],
+                'amount' => $element[1],
+                'price' => $element[2]
+            ];
+        }
+        return $res;
+    }
+    private function sendOrder2Admin($request, $order)
+    {
+        $items = explode('#', $request->items);
+        $data = ['order' => $order, 'items' => $items];
+
+        Mail::to(User::find($order->user_id)->email)->send(new CompanyInvoice($data));
     }
 
     private function waMsg($request, $order)

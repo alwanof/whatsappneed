@@ -6,8 +6,11 @@ use Ctessier\NovaAdvancedImageField\AdvancedImage;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Config;
 use Laravel\Nova\Fields\Avatar;
+use Laravel\Nova\Fields\Badge;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\BelongsToMany;
+use Laravel\Nova\Fields\Date;
+use Laravel\Nova\Fields\DateTime;
 use Laravel\Nova\Fields\Gravatar;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Password;
@@ -93,16 +96,26 @@ class User extends Resource
                 ->onlyOnForms()
                 ->creationRules('required', 'string', 'min:8')
                 ->updateRules('nullable', 'string', 'min:8'),
-            Text::make(__('Expiration Date'), 'expiration_date')
+            /*Text::make(__('Expiration Date'), 'expiration_date')
                 ->displayUsing(function ($expirationDate) {
                     return ($expirationDate) ? $expirationDate->diffForHumans() : '-';
                 })
-                ->onlyOnIndex(),
+                ->onlyOnIndex(),*/
             Text::make(__('Level'), 'level', function () {
 
                 return $this->getLevel($this->level);
             })
                 ->onlyOnIndex(),
+            Date::make(__('Expiration'), 'expiration_date'),
+            Badge::make(__('Status'), 'status', function () {
+                return $this->statusLabel($this->status);
+            })
+                ->map([
+                    $this->statusLabel(0) => 'warning',
+                    $this->statusLabel(1) => 'success',
+                    $this->statusLabel(-1) => 'danger',
+
+                ]),
             Select::make(__('Level'), 'level')->options($this->getLevel())
                 ->creationRules('required')
                 ->onlyOnForms()
@@ -186,5 +199,21 @@ class User extends Resource
                 return $res;
                 break;
         }
+    }
+    private function statusLabel($status)
+    {
+        $label = '#E';
+        switch ($status) {
+            case 0:
+                $label = __('PENDING');
+                break;
+            case 1:
+                $label = __('AUTHORIZED');
+                break;
+            case -1:
+                $label = __('EXPIRED');
+                break;
+        }
+        return $label;
     }
 }

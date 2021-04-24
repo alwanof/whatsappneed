@@ -4,11 +4,19 @@
 
     @include('nova::auth.partials.header')
 
+
     <form class="bg-white shadow rounded-lg p-8 max-w-login mx-auto" method="POST" action="{{ route('nova.login') }}">
         {{ csrf_field() }}
 
         @component('nova::auth.partials.heading')
             {{ __('Welcome Back!') }}
+            @if (Session::has('expired'))
+                <p style="color:red !important">
+                    Your account has expired! <a href="#">Renew Now</a>
+                </p>
+
+
+            @endif
         @endcomponent
 
         @if ($errors->any())
