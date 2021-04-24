@@ -76,12 +76,16 @@ trait Multitenantable
                             break;
                         case 2:
                             if ($table == 'users') {
+                                $now = Carbon::now()->toDateTimeString();
                                 $builder->where('id', auth()->id());
-                                if (auth()->user()->expiration_date) {
-                                    $now = Carbon::now()->toDateTimeString();
-                                    $builder->where('expiration_date', '>=', $now);
-                                    Session::flash('expired', 'You have been logged out!');
+                                if (auth()->user()->status == 0) {
+                                    $builder->where('status', 1);
+                                    Session::flash('pending', 'You have been logged out!');
                                     Auth::logout();
+                                }
+                                if (auth()->user()->expiration_date) {
+                                    if (auth()->user()->expiration_date < $now) {
+                                    }
                                 }
                             } else {
                                 $builder->where('user_id', auth()->id())

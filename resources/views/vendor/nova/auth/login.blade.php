@@ -17,6 +17,13 @@
 
 
             @endif
+            @if (Session::has('pending'))
+                <p style="color:red !important">
+                    Your account is under review!
+                </p>
+
+
+            @endif
         @endcomponent
 
         @if ($errors->any())
