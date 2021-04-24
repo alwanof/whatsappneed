@@ -73,8 +73,6 @@ class Navigation extends Resource
             Number::make(__('Page REf'), 'page_id')->nullable(),
             Number::make(__('Category REf'), 'category_id')->nullable(),
             Number::make(__('Order'), 'order')->default(0),
-            Boolean::make(__('Nav'), "nav")
-                ->sortable(),
             BelongsTo::make(__('Navigation'), 'navigation')->nullable()
 
         ];
