@@ -18,6 +18,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('home');
 });
+Route::get('/payment', function () {
+    return view('payment');
+});
 
 Route::get('order/{slug}', 'OrderController@index');
 Route::get('clear/test', 'TestController@go');

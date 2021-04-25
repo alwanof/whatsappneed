@@ -12,7 +12,7 @@
             {{ __('Welcome Back!') }}
             @if (Session::has('expired'))
                 <p style="color:red !important">
-                    Your account has expired! <a href="#">Renew Now</a>
+                    Your account has expired! <a href="/payment">Renew Now</a>
                 </p>
 
 
