@@ -82,9 +82,11 @@ trait Multitenantable
                                     $builder->where('status', 1);
                                     Session::flash('pending', 'You have been logged out!');
                                     Auth::logout();
-                                }
-                                if (auth()->user()->expiration_date) {
+                                } elseif (auth()->user()->expiration_date) {
                                     if (auth()->user()->expiration_date < $now) {
+                                        $builder->where('status', 2);
+                                        Session::flash('expired', 'You have been logged out!');
+                                        Auth::logout();
                                     }
                                 }
                             } else {
