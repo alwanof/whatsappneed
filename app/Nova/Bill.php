@@ -2,15 +2,14 @@
 
 namespace App\Nova;
 
-use Ctessier\NovaAdvancedImageField\AdvancedImage;
 use Illuminate\Http\Request;
-use Laravel\Nova\Fields\Avatar;
-use Laravel\Nova\Fields\Boolean;
+use Laravel\Nova\Fields\Date;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Http\Requests\NovaRequest;
+use Laravel\Nova\Fields\Number;
 
-class Slider extends Resource
+class Bill extends Resource
 {
     /**
      * Get the displayable label of the resource.
@@ -19,7 +18,7 @@ class Slider extends Resource
      */
     public static function label()
     {
-        return __('Sliders');
+        return __('Bills');
     }
 
     /**
@@ -29,14 +28,14 @@ class Slider extends Resource
      */
     public static function singularLabel()
     {
-        return __('Slider');
+        return __('Bill');
     }
     /**
      * The model the resource corresponds to.
      *
      * @var string
      */
-    public static $model = \App\Slider::class;
+    public static $model = \App\Bill::class;
 
     /**
      * The single value that should be used to represent the resource when being displayed.
@@ -51,7 +50,7 @@ class Slider extends Resource
      * @var array
      */
     public static $search = [
-        'title',
+        'id', 'title'
     ];
 
     /**
@@ -64,14 +63,12 @@ class Slider extends Resource
     {
         return [
             ID::make(__('ID'), 'id')->sortable(),
-            Avatar::make(__('Image'), 'image')->onlyOnIndex(),
-            AdvancedImage::make(__('Image'), 'image')->croppable(5 / 1)->resize(1200)->disk('public')->path('sliders')->rules('required')->onlyOnForms(),
             Text::make(__('Title'), 'title')
                 ->rules('required'),
-            Text::make(__('Description'), 'description')->hideFromIndex(),
-            Boolean::make(__('Available'), "available")
+            Number::make(__('Amount'), 'amount')
+                ->rules('required'),
+            Date::make(__('Date'), 'created_at')
                 ->sortable()
-                ->withMeta(["value" => 1]),
         ];
     }
 

@@ -46,7 +46,10 @@ class AuthServiceProvider extends ServiceProvider
             'viewSlider',
             'manageSlider',
             'viewPage',
-            'managePage'
+            'managePage',
+            'managePlan',
+            'viewLead',
+            'manageLead',
         ])->each(function ($permission) {
             Gate::define($permission, function ($user) use ($permission) {
                 return $user->hasRoleWithPermission($permission);

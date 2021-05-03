@@ -104,9 +104,19 @@ class OrderController extends Controller
         }
 
         $dist = ($request->dist != 'N') ? "[$request->dist]" : null;
-        $addressText = ($request->indoor == 0) ? "📍 $request->address /B:$request->aprt D:$request->house 🔔 $order->bell" : null;
-        $mapLink = ($request->indoor == 0) ? "https://maps.google.com/local?q=$order->lat,$order->lng" : null;
-        $orderLink = ($request->indoor == 0) ? env('APP_URL') . '/order/' . $order->slug : null;
+        $user = User::find($order->user_id);
+        $addressText = '';
+        $mapLink = '';
+        $orderLink = '';
+        if ($user->settings['wm_address'] == 1) {
+            $addressText = ($request->indoor == 0) ? "📍 $request->address /B:$request->aprt D:$request->house 🔔 $order->bell" : null;
+        }
+        if ($user->settings['wm_map'] == 1) {
+            $mapLink = ($request->indoor == 0) ? "https://maps.google.com/local?q=$order->lat,$order->lng" : null;
+        }
+        if ($user->settings['wm_order'] == 1) {
+            $orderLink = ($request->indoor == 0) ? env('APP_URL') . '/order/' . $order->slug : null;
+        }
         $msg = $request->name . $dist . '%0A -------- %0A' . $orderText . '%0A -------- %0A' . $order->total . '₺%0A -------- %0A' . $addressText . '%0A -------- %0A' . $order->note_a . '%0A -------- %0A🏠' . $mapLink . '%0A -------- %0A🔖' . $orderLink;
 
         return $this->strim($msg);

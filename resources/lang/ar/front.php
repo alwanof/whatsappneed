@@ -9,7 +9,9 @@ return [
         'WHY' => 'Why?',
         'HOW' => 'How?',
         'PRICING' => 'Pricing',
-        'CONTACT' => 'Contact'
+        'CONTACT' => 'Contact',
+        'PP' => 'Privacy policy',
+        'TS' => 'Terms of service'
 
     ],
     'HERO' => [
@@ -117,7 +119,9 @@ return [
         'PHONE' => 'Phone',
         'COMPANY' => 'Company',
         'SEND' => 'Send',
-    ]
+    ],
+    'FOOTER' => 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed dinonumy eirmod tempor invidunt.'
+
 
 
 ];

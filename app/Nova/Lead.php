@@ -2,15 +2,17 @@
 
 namespace App\Nova;
 
-use Ctessier\NovaAdvancedImageField\AdvancedImage;
+use App\Nova\Actions\ApprovePayment;
+use Bissolli\NovaPhoneField\PhoneNumber;
 use Illuminate\Http\Request;
-use Laravel\Nova\Fields\Avatar;
-use Laravel\Nova\Fields\Boolean;
+use Inspheric\Fields\Email;
+use Laravel\Nova\Fields\Badge;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Text;
+use Laravel\Nova\Fields\Trix;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
-class Slider extends Resource
+class Lead extends Resource
 {
     /**
      * Get the displayable label of the resource.
@@ -19,7 +21,7 @@ class Slider extends Resource
      */
     public static function label()
     {
-        return __('Sliders');
+        return __('Leads');
     }
 
     /**
@@ -29,21 +31,21 @@ class Slider extends Resource
      */
     public static function singularLabel()
     {
-        return __('Slider');
+        return __('Lead');
     }
     /**
      * The model the resource corresponds to.
      *
      * @var string
      */
-    public static $model = \App\Slider::class;
+    public static $model = \App\Lead::class;
 
     /**
      * The single value that should be used to represent the resource when being displayed.
      *
      * @var string
      */
-    public static $title = 'title';
+    public static $title = 'email';
 
     /**
      * The columns that should be searched.
@@ -51,7 +53,7 @@ class Slider extends Resource
      * @var array
      */
     public static $search = [
-        'title',
+        'name', 'email', 'phone'
     ];
 
     /**
@@ -64,14 +66,22 @@ class Slider extends Resource
     {
         return [
             ID::make(__('ID'), 'id')->sortable(),
-            Avatar::make(__('Image'), 'image')->onlyOnIndex(),
-            AdvancedImage::make(__('Image'), 'image')->croppable(5 / 1)->resize(1200)->disk('public')->path('sliders')->rules('required')->onlyOnForms(),
-            Text::make(__('Title'), 'title')
-                ->rules('required'),
-            Text::make(__('Description'), 'description')->hideFromIndex(),
-            Boolean::make(__('Available'), "available")
-                ->sortable()
-                ->withMeta(["value" => 1]),
+            Text::make(__('Name'), 'name'),
+            Email::make(__('Email'), 'email'),
+            PhoneNumber::make(__('Phone'), 'phone'),
+            Text::make('Title', function () {
+                $title = json_decode($this->title);
+                return $title->package . '/' . $title->bundle;
+            })->onlyOnIndex(),
+            Trix::make('Title', 'title'),
+            Trix::make('Note', 'note'),
+            Badge::make(__('Status'), 'status', function () {
+                return $this->statusLabel($this->status);
+            })
+                ->map([
+                    $this->statusLabel(0) => 'warning',
+                    $this->statusLabel(1) => 'success',
+                ]),
         ];
     }
 
@@ -117,5 +127,18 @@ class Slider extends Resource
     public function actions(Request $request)
     {
         return [];
+    }
+    private function statusLabel($status)
+    {
+        $label = '#E';
+        switch ($status) {
+            case 0:
+                $label = __('Pending');
+                break;
+            case 1:
+                $label = __('Authorized');
+                break;
+        }
+        return $label;
     }
 }

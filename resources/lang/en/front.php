@@ -5,11 +5,12 @@ return [
         'HOME' => 'Home',
         'FEATURES' => 'Features',
         'QRMENU' => 'QR Menu',
-        'HOW' => 'How?',
-        'WHY' => 'Why?',
-        'HOW' => 'How?',
+        'HOW' => 'How it Works?',
+        'WHY' => 'Why us?',
         'PRICING' => 'Pricing',
-        'CONTACT' => 'Contact'
+        'CONTACT' => 'Contact',
+        'PP' => 'Privacy policy',
+        'TS' => 'Terms of service'
 
     ],
     'HERO' => [
@@ -115,7 +116,31 @@ return [
         'PHONE' => 'Phone',
         'COMPANY' => 'whatsappneed',
         'SEND' => 'Send',
+    ],
+    'FOOTER' => 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed dinonumy eirmod tempor invidunt.',
+    'LEAD' => [
+        'DEMO' => 'Open a Demo Account(3 Months)',
+        'NAME' => 'Your Name',
+        'EMAIL' => 'Your Email',
+        'PHONE' => 'Your Phone',
+        'PACKAGE' => 'Package',
+        'PACKAGES' => [
+            'BASIC' => 'Basic',
+            'STANDARD' => 'Standard',
+            'PROFESSIONAL' => 'Professional'
+        ],
+        'BUNDLE' => 'BUNDLE',
+        'MONTHS' => 'Months',
+        'NOTE' => 'Your Note',
+        'GET_STARTED' => 'Get Started',
+        'SUCCESS' => [
+            'TITLE' => 'Thank you for getting in touch!',
+            'BODY' => 'We appreciate you contacting us. One of our colleagues will get back in touch with you soon!Have a great day!'
+        ]
+
     ]
+
+
 
 
 ];

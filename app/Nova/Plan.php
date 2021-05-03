@@ -2,15 +2,12 @@
 
 namespace App\Nova;
 
-use Ctessier\NovaAdvancedImageField\AdvancedImage;
 use Illuminate\Http\Request;
-use Laravel\Nova\Fields\Avatar;
-use Laravel\Nova\Fields\Boolean;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
-class Slider extends Resource
+class Plan extends Resource
 {
     /**
      * Get the displayable label of the resource.
@@ -19,7 +16,7 @@ class Slider extends Resource
      */
     public static function label()
     {
-        return __('Sliders');
+        return __('Plans');
     }
 
     /**
@@ -29,14 +26,14 @@ class Slider extends Resource
      */
     public static function singularLabel()
     {
-        return __('Slider');
+        return __('Plan');
     }
     /**
      * The model the resource corresponds to.
      *
      * @var string
      */
-    public static $model = \App\Slider::class;
+    public static $model = \App\Plan::class;
 
     /**
      * The single value that should be used to represent the resource when being displayed.
@@ -64,14 +61,10 @@ class Slider extends Resource
     {
         return [
             ID::make(__('ID'), 'id')->sortable(),
-            Avatar::make(__('Image'), 'image')->onlyOnIndex(),
-            AdvancedImage::make(__('Image'), 'image')->croppable(5 / 1)->resize(1200)->disk('public')->path('sliders')->rules('required')->onlyOnForms(),
             Text::make(__('Title'), 'title')
+                ->rules('required', 'max:72'),
+            Text::make(__('Meta'), 'meta')
                 ->rules('required'),
-            Text::make(__('Description'), 'description')->hideFromIndex(),
-            Boolean::make(__('Available'), "available")
-                ->sortable()
-                ->withMeta(["value" => 1]),
         ];
     }
 

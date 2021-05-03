@@ -29,7 +29,7 @@ class ThreadController extends Controller
         $qrThread = Thread::where('slug', $qr)->firstOrFail();
 
         $restaurant = User::findOrFail($qrThread->user_id);
-        $home = Setting::where('key', 'homeLink')->first()->value;
+        $home = Setting::where('key', 'homeType ')->first()->value;
 
         $thread = new ResourcesThread($qrThread);
 

@@ -96,17 +96,15 @@ $lang = app()->getLocale();
                                     </li>
 
                                     <li class="nav-item">
-                                        <a class="page-scroll" href="#why">{{ __('front.NAV.HOW') }}</a>
+                                        <a class="page-scroll" href="#about2">{{ __('front.NAV.HOW') }}</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="page-scroll" href="#pricing">{{ __('front.NAV.WHY') }}</a>
+                                        <a class="page-scroll" href="#why">{{ __('front.NAV.WHY') }}</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="page-scroll" href="#testimonials">{{ __('front.NAV.PRICING') }}</a>
+                                        <a class="page-scroll" href="#pricing">{{ __('front.NAV.PRICING') }}</a>
                                     </li>
-                                    <li class="nav-item">
-                                        <a class="page-scroll" href="#testimonials">{{ __('front.NAV.CONTACT') }}</a>
-                                    </li>
+
                                     <li class="nav-item">
                                         <a class="page-scroll" href="#testimonials">
                                             <i class="fas fa-globe-europe"></i>
@@ -143,8 +141,7 @@ $lang = app()->getLocale();
                             <div class="logo mb-30">
                                 <a href="index.html"> <img src="layout/img/logo/logo.png" height="44" alt=""> </a>
                             </div>
-                            <p class="desc mb-30 text-white">Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
-                                sed dinonumy eirmod tempor invidunt.</p>
+                            <p class="desc mb-30 text-white">{{ __('front.FOOTER') }}</p>
                             <ul class="socials">
                                 <li>
                                     <a href="jvascript:void(0)"> <i class="lni lni-facebook-original"></i> </a>
@@ -164,37 +161,30 @@ $lang = app()->getLocale();
 
                     <div class="col-xl-2 col-lg-2 col-md-6">
                         <div class="footer-widget">
-                            <h3>About Us</h3>
                             <ul class="links">
-                                <li> <a href="javascript:void(0)">Home</a> </li>
-                                <li> <a href="javascript:void(0)">Feature</a> </li>
-                                <li> <a href="javascript:void(0)">About</a> </li>
-                                <li> <a href="javascript:void(0)">Testimonials</a> </li>
+                                <li> <a href="#home">{{ __('front.NAV.HOME') }}</a> </li>
+                                <li> <a href="#features">{{ __('front.NAV.FEATURES') }}</a> </li>
+                                <li> <a href="#about">{{ __('front.NAV.QRMENU') }}</a> </li>
+                                <li> <a href="#about2">{{ __('front.NAV.HOW') }}</a> </li>
                             </ul>
                         </div>
                     </div>
 
                     <div class="col-xl-3 col-lg-3 col-md-6">
                         <div class="footer-widget">
-                            <h3>Features</h3>
                             <ul class="links">
-                                <li> <a href="javascript:void(0)">How it works</a> </li>
-                                <li> <a href="javascript:void(0)">Privacy policy</a> </li>
-                                <li> <a href="javascript:void(0)">Terms of service</a> </li>
-                                <li> <a href="javascript:void(0)">Refund policy</a></li>
+                                <li> <a href="#why">{{ __('front.NAV.WHY') }}</a> </li>
+                                <li> <a href="#pricing">{{ __('front.NAV.PRICING') }}</a></li>
+                                <li> <a href="#">{{ __('front.NAV.PP') }}</a> </li>
+                                <li> <a href="#">{{ __('front.NAV.TS') }}</a> </li>
+
                             </ul>
                         </div>
                     </div>
 
                     <div class="col-xl-3 col-lg-3 col-md-6">
                         <div class="footer-widget">
-                            <h3>Other Products</h3>
-                            <ul class="links">
-                                <li> <a href="jvascript:void(0)">Accounting Software</a> </li>
-                                <li> <a href="jvascript:void(0)">Billing Software</a> </li>
-                                <li> <a href="jvascript:void(0)">Booking System</a> </li>
-                                <li> <a href="jvascript:void(0)">Tracking System</a> </li>
-                            </ul>
+
                         </div>
                     </div>
 
@@ -212,6 +202,7 @@ $lang = app()->getLocale();
 
     <!-- ========================= JS here ========================= -->
     <script src="{{ asset('layout/js/bootstrap.5.0.0.alpha-2-min.js') }}"></script>
+ 
     <script src="{{ asset('layout/js/tiny-slider.js') }}"></script>
     <script src="{{ asset('layout/js/wow.min.js') }}"></script>
     <script src="{{ asset('layout/js/main.js') }}"></script>

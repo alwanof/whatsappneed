@@ -2,6 +2,7 @@
 
 namespace App\Nova;
 
+use App\Nova\Actions\ActivePending;
 use Ctessier\NovaAdvancedImageField\AdvancedImage;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Config;
@@ -111,9 +112,8 @@ class User extends Resource
                 return $this->statusLabel($this->status);
             })
                 ->map([
-                    $this->statusLabel(0) => 'warning',
-                    $this->statusLabel(1) => 'success',
-                    $this->statusLabel(-1) => 'danger',
+                    $this->statusLabel(0) => 'danger',
+                    $this->statusLabel(1) => 'success'
 
                 ]),
             Select::make(__('Level'), 'level')->options($this->getLevel())
@@ -169,7 +169,15 @@ class User extends Resource
      */
     public function actions(Request $request)
     {
-        return [];
+        return [
+            (new ActivePending)->canSee(function ($request) {
+                return $request->user()->can(
+                    'manageUser',
+                    User::class
+                );
+            }),
+
+        ];
     }
 
     private function getLevel($key = 99)
@@ -209,9 +217,6 @@ class User extends Resource
                 break;
             case 1:
                 $label = __('AUTHORIZED');
-                break;
-            case -1:
-                $label = __('EXPIRED');
                 break;
         }
         return $label;
