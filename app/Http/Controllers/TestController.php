@@ -31,7 +31,7 @@ class TestController extends Controller
     public function testo()
     {
         $item = '17@item1@amount1@price1#18@item2@amount2@price2#19@item3@amount3@price3';
-        $order = Order::find(21);
+        $order = Order::find(210);
         $items = explode('#', $item);
         $data = ['order' => $order, 'items' => $items];
 
