@@ -474,8 +474,8 @@
                                 <tr>
                                     <td class="content-cell">
                                         <div class="f-fallback">
-                                            <h1>{{__('mail.Hi')}}</h1>
-                                            <p>{{__('mail.INTRO')}}</p>
+                                            <h1>{{ __('mail.Hi') }}</h1>
+                                            <p>{{ __('mail.INTRO') }}</p>
                                             <table class="attributes" width="100%" cellpadding="0" cellspacing="0"
                                                 role="presentation">
                                                 <tr>
@@ -550,13 +550,14 @@
                                                             cellspacing="0">
                                                             <tr>
                                                                 <th class="purchase_heading" align="left">
-                                                                    <p class="f-fallback">{{__('mail.DESCRIPTION')}}</p>
+                                                                    <p class="f-fallback">{{ __('mail.DESCRIPTION') }}
+                                                                    </p>
                                                                 </th>
                                                                 <th class="purchase_heading" align="left">
-                                                                    <p class="f-fallback">{{__('mail.AMOUNT')}}</p>
+                                                                    <p class="f-fallback">{{ __('mail.AMOUNT') }}</p>
                                                                 </th>
                                                                 <th class="purchase_heading" align="right">
-                                                                    <p class="f-fallback">{{__('mail.SUBTOTAL')}}</p>
+                                                                    <p class="f-fallback">{{ __('mail.SUBTOTAL') }}</p>
                                                                 </th>
 
 
@@ -574,7 +575,8 @@
                                                                     </td>
                                                                     <td class="align-right" width="20%"
                                                                         class="purchase_item">
-                                                                        <span class="f-fallback">{{ explode('@', $item)[2] }}</span>
+                                                                        <span
+                                                                            class="f-fallback">{{ explode('@', $item)[3] }}</span>
 
                                                                     </td>
 
@@ -585,7 +587,8 @@
 
                                                                 </td>
                                                                 <td width="20%" class="purchase_footer" valign="middle">
-                                                                    <p class="f-fallback purchase_total">{{__('mail.TOTAL')}}</p>
+                                                                    <p class="f-fallback purchase_total">
+                                                                        {{ __('mail.TOTAL') }}</p>
                                                                 </td>
                                                                 <td width="20%" class="purchase_footer" valign="middle">
                                                                     <p class="f-fallback purchase_total">
@@ -604,7 +607,7 @@
                                             <table class="body-sub" role="presentation">
                                                 <tr>
                                                     <td>
-                                                        <p class="f-fallback sub">I{{__('mail.FOOTER')}}</p>
+                                                        <p class="f-fallback sub">I{{ __('mail.FOOTER') }}</p>
                                                         <p class="f-fallback sub">
                                                             {{ url('control/resources/orders/' . $data['order']['id']) }}
                                                         </p>

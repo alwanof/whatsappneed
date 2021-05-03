@@ -130,13 +130,16 @@ class Lead extends Resource
     }
     private function statusLabel($status)
     {
-        $label = '#E';
+        $label = __('Pending');
         switch ($status) {
             case 0:
                 $label = __('Pending');
                 break;
             case 1:
                 $label = __('Authorized');
+                break;
+            default:
+                $label = __('Pending');
                 break;
         }
         return $label;

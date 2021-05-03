@@ -37,6 +37,8 @@ class TestController extends Controller
 
         Mail::to(User::find($order->user_id)->email)->send(new CompanyInvoice($data));
         return 11;
+
+
         //return Carbon::now()->toDateTimeString();
         //$data = YOURMODEL::where('created_at', '<=', Carbon::now()->subDays(2)->toDateTimeString())->get();
         //return User::where('expiration_date', '>=', Carbon::now()->toDateTimeString())->get();

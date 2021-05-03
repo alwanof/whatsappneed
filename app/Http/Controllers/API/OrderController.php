@@ -65,8 +65,8 @@ class OrderController extends Controller
         $order->save();
         if ($rest->settings['whatsapp_off'] == 1) {
             $this->sendOrder2Admin($request, $order);
-            //$msg = Str::replace('@@@', $order->name, __('core.thanks_msg'));
-            return response(__('core.thanks_msg'), 200);
+            $msg = Str::replace('@@@', $order->name, __('core.thanks_msg'));
+            return response($msg, 200);
         }
 
 
@@ -79,9 +79,10 @@ class OrderController extends Controller
         foreach ($items as $item) {
             $element = explode('@', $item);
             $res[] = [
-                'item' => $element[0],
-                'amount' => $element[1],
-                'price' => $element[2]
+                'id' => $element[0],
+                'item' => $element[1],
+                'amount' => $element[2],
+                'price' => $element[3]
             ];
         }
         return $res;

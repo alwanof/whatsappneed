@@ -158,7 +158,7 @@ class Order extends Resource
 
     private function statusLabel($status)
     {
-        $label = '#E';
+        $label = __('New');;
         switch ($status) {
             case 0:
                 $label = __('New');
@@ -172,6 +172,9 @@ class Order extends Resource
 
             case 3:
                 $label = __('Delivered');
+                break;
+            default:
+                $label = __('New');
                 break;
         }
         return $label;
