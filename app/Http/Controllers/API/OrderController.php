@@ -55,7 +55,7 @@ class OrderController extends Controller
         $order->bell = $request->bell ?? null;
         $order->lat = $request->lat;
         $order->lng = $request->lng;
-        $order->items = json_encode($this->itemsArray($request->items));
+        $order->items = json_encode($this->itemsArray($request->items), JSON_UNESCAPED_UNICODE);
         $order->total = $request->total;
         $order->status = 0;
         $order->note_a = $request->note ?? null;
