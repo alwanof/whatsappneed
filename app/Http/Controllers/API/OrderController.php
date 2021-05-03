@@ -65,7 +65,7 @@ class OrderController extends Controller
         $order->save();
         if ($rest->settings['whatsapp_off'] == 1) {
             $this->sendOrder2Admin($request, $order);
-            $msg = Str::replace('@@@', $order->name, __('core.thanks_msg'));
+            $msg = str_replace('@@@', $order->name, __('core.thanks_msg'));
             return response($msg, 200);
         }
 
