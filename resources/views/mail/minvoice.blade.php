@@ -574,7 +574,7 @@
                                                                     </td>
                                                                     <td class="align-right" width="20%"
                                                                         class="purchase_item">
-                                                                        <span class="f-fallback">-</span>
+                                                                        <span class="f-fallback">{{ explode('@', $item)[2] }}</span>
 
                                                                     </td>
 
