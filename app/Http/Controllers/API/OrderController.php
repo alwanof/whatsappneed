@@ -39,8 +39,11 @@ class OrderController extends Controller
         $phoneNumber = str_replace("(", "", $phoneNumber);
         $phoneNumber = str_replace(")", "", $phoneNumber);
         $phoneNumber = str_replace("-", "", $phoneNumber);
-        $phoneKey = $rest->settings['phone_code'];
-        $phoneNumber = $phoneKey . $phoneNumber;
+        if ($request->indoor != 1) {
+            $phoneKey = $rest->settings['phone_code'];
+            $phoneNumber = $phoneKey . $phoneNumber;
+        }
+
         //$phoneNumber = '90' . $phoneNumber;
 
         $order = new Order();

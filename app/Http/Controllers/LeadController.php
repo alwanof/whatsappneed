@@ -27,7 +27,7 @@ class LeadController extends Controller
             'info' => $request->ipinfo
         ];
         $lead = new Lead;
-        $lead->title = json_encode($title);
+        $lead->title = json_encode($title, JSON_UNESCAPED_UNICODE);
         $lead->name = $request->name;
         $lead->email = $request->email;
         $lead->phone = $request->phone;
