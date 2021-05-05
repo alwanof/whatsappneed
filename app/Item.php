@@ -26,4 +26,10 @@ class Item extends Model
         }
         return $res;
     }
+
+    public function orders()
+    {
+        return $this->belongsToMany(Order::class, 'elements')
+            ->withPivot(['amount']);
+    }
 }

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\API;
 use App\Driver;
 use App\Http\Controllers\Controller;
 use App\Mail\CompanyInvoice;
+use App\Mail\CustomerInvoice;
 use App\Order;
 use App\Parse\Stream;
 use App\User;
@@ -64,8 +65,9 @@ class OrderController extends Controller
         $order->note_a = $request->note ?? null;
         $order->user_id = $rest->id;
         $order->parent = $rest->parent_id;
-
+        $order->items()->attach(array_column($this->itemsArray($request->items), 'id'));
         $order->save();
+
         if ($rest->settings['whatsapp_off'] == 1) {
             $this->sendOrder2Admin($request, $order);
             $msg = str_replace('@@@', $order->name, __('core.thanks_msg'));
@@ -94,8 +96,13 @@ class OrderController extends Controller
     {
         $items = explode('#', $request->items);
         $data = ['order' => $order, 'items' => $items];
-
-        Mail::to(User::find($order->user_id)->email)->send(new CompanyInvoice($data));
+        $user = User::find($order->user_id);
+        Mail::to($user->email)->send(new CompanyInvoice($data));
+        if ($user->settings['sendCinv'] == 1) {
+            if ($order->email) {
+                Mail::to($order->email)->send(new CustomerInvoice($data));
+            }
+        }
     }
 
     private function waMsg($request, $order)

@@ -103,6 +103,12 @@ class Item extends Resource
 
             Avatar::make(__('Image4'), 'image4')->onlyOnDetail(),
             AdvancedImage::make(__('Image4'), 'image4')->croppable(16 / 9)->resize(1200)->disk('public')->path('item_image_2')->onlyOnForms(),
+            BelongsToMany::make(__('Orders'), 'orders', 'App\Nova\Order')
+                ->fields(function () {
+                    return [
+                        Text::make('Amount', 'amount'),
+                    ];
+                }),
 
         ];
     }

@@ -40,4 +40,10 @@ class Order extends Model
     {
         return $this->belongsTo(User::class, 'parent');
     }
+
+    public function items()
+    {
+        return $this->belongsToMany(Item::class, 'elements')
+            ->withPivot(['amount']);
+    }
 }

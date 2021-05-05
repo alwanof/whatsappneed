@@ -476,8 +476,8 @@ $lang = app()->getLocale();
                                 <tr>
                                     <td class="content-cell">
                                         <div class="f-fallback">
-                                            <h1>{{ __('mail.Hi') }}</h1>
-                                            <p>{{ __('mail.INTRO') }}</p>
+                                            <h1>{{ __('mail.CUSTOMER.Hi') $data['order']['name'], }}</h1>
+                                            <p>{{ __('mail.CUSTOMER.INTRO') }}</p>
                                             <table class="attributes" width="100%" cellpadding="0" cellspacing="0"
                                                 role="presentation">
                                                 <tr>
@@ -516,26 +516,7 @@ $lang = app()->getLocale();
                                                     </td>
                                                 </tr>
                                             </table>
-                                            <!-- Action -->
-                                            <table class="body-action" align="center" width="100%" cellpadding="0"
-                                                cellspacing="0" role="presentation">
-                                                <tr>
-                                                    <td align="center">
-                                                        <!-- Border based button
-           https://litmus.com/blog/a-guide-to-bulletproof-buttons-in-email-design -->
-                                                        <table width="100%" border="0" cellspacing="0" cellpadding="0"
-                                                            role="presentation">
-                                                            <tr>
-                                                                <td align="center">
-                                                                    <a href="{{ url('control/resources/orders/' . $data['order']['id']) }}"
-                                                                        class="f-fallback button button--green"
-                                                                        target="_blank">Order Details</a>
-                                                                </td>
-                                                            </tr>
-                                                        </table>
-                                                    </td>
-                                                </tr>
-                                            </table>
+
                                             <table class="purchase" width="100%" cellpadding="0" cellspacing="0">
                                                 <tr>
                                                     <td>
@@ -552,16 +533,14 @@ $lang = app()->getLocale();
                                                             cellspacing="0">
                                                             <tr>
                                                                 <th class="purchase_heading" align="left">
-                                                                    <p class="f-fallback">
-                                                                        {{ __('mail.DESCRIPTION') }}
+                                                                    <p class="f-fallback">{{ __('mail.CUSTOMER.DESCRIPTION') }}
                                                                     </p>
                                                                 </th>
                                                                 <th class="purchase_heading" align="left">
-                                                                    <p class="f-fallback">{{ __('mail.AMOUNT') }}</p>
+                                                                    <p class="f-fallback">{{ __('mail.CUSTOMER.AMOUNT') }}</p>
                                                                 </th>
                                                                 <th class="purchase_heading" align="right">
-                                                                    <p class="f-fallback">{{ __('mail.SUBTOTAL') }}
-                                                                    </p>
+                                                                    <p class="f-fallback">{{ __('mail.CUSTOMER.SUBTOTAL') }}</p>
                                                                 </th>
 
 
@@ -592,7 +571,7 @@ $lang = app()->getLocale();
                                                                 </td>
                                                                 <td width="20%" class="purchase_footer" valign="middle">
                                                                     <p class="f-fallback purchase_total">
-                                                                        {{ __('mail.TOTAL') }}</p>
+                                                                        {{ __('mail.CUSTOMER.TOTAL') }}</p>
                                                                 </td>
                                                                 <td width="20%" class="purchase_footer" valign="middle">
                                                                     <p class="f-fallback purchase_total">
@@ -603,6 +582,7 @@ $lang = app()->getLocale();
                                                     </td>
                                                 </tr>
                                             </table>
+                                            <p>{{__('mail.CUSTOMER.PREEFOOTER')}}</p>
 
                                             <p>Cheers,
                                                 <br>{{ env('APP_NAME') }}

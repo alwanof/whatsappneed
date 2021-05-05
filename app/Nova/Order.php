@@ -12,6 +12,7 @@ use Illuminate\Support\Str;
 use Khalin\Nova\Field\Link;
 use Laravel\Nova\Fields\Badge;
 use Laravel\Nova\Fields\BelongsTo;
+use Laravel\Nova\Fields\BelongsToMany;
 use Laravel\Nova\Fields\Textarea;
 use phpDocumentor\Reflection\Types\This;
 
@@ -108,7 +109,14 @@ class Order extends Resource
                     return "https://www.google.com/maps/?q=" . $this->lat . "," . $this->lng;
                 })
                 ->icon()
-                ->blank()
+                ->blank(),
+            BelongsToMany::make(__('Items'), 'items', 'App\Nova\Item')
+                ->fields(function () {
+                    return [
+                        Text::make('Amount', 'amount'),
+                    ];
+                }),
+
         ];
     }
 
