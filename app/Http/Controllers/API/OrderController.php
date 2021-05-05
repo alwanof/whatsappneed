@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\API;
 
 use App\Driver;
+use App\Element;
 use App\Http\Controllers\Controller;
 use App\Mail\CompanyInvoice;
 use App\Mail\CustomerInvoice;
@@ -67,7 +68,16 @@ class OrderController extends Controller
         $order->parent = $rest->parent_id;
 
         $order->save();
-        $order->items()->attach(array_column($this->itemsArray($request->items), 'id'));
+        $initItems = $this->itemsArray($request->items);
+        foreach ($initItems as  $item) {
+            $element = new Element();
+            $element->order_id = $order->id;
+            $element->item_id = $item['id'];
+            $element->amount = $item['amount'];
+            $element->save();
+        }
+
+
         if ($rest->settings['whatsapp_off'] == 1) {
             $this->sendOrder2Admin($request, $order);
             $msg = str_replace('@@@', $order->name, __('core.thanks_msg'));
