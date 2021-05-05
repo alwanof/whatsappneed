@@ -65,9 +65,9 @@ class OrderController extends Controller
         $order->note_a = $request->note ?? null;
         $order->user_id = $rest->id;
         $order->parent = $rest->parent_id;
-        $order->items()->attach(array_column($this->itemsArray($request->items), 'id'));
-        $order->save();
 
+        $order->save();
+        $order->items()->attach(array_column($this->itemsArray($request->items), 'id'));
         if ($rest->settings['whatsapp_off'] == 1) {
             $this->sendOrder2Admin($request, $order);
             $msg = str_replace('@@@', $order->name, __('core.thanks_msg'));
