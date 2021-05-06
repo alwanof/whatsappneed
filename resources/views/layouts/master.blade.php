@@ -106,9 +106,10 @@ $lang = app()->getLocale();
                                     </li>
 
                                     <li class="nav-item">
-                                        <a class="page-scroll" href="#testimonials">
+                                        <a class="page-scroll"
+                                            href="{{ route('lang.set', $lang == 'ar' ? 'en' : 'ar') }}">
                                             <i class="fas fa-globe-europe"></i>
-                                            {{ strtoupper($lang) }}
+                                            {{ strtoupper($lang == 'ar' ? 'en' : 'ar') }}
                                         </a>
                                     </li>
 
@@ -202,7 +203,7 @@ $lang = app()->getLocale();
 
     <!-- ========================= JS here ========================= -->
     <script src="{{ asset('layout/js/bootstrap.5.0.0.alpha-2-min.js') }}"></script>
- 
+
     <script src="{{ asset('layout/js/tiny-slider.js') }}"></script>
     <script src="{{ asset('layout/js/wow.min.js') }}"></script>
     <script src="{{ asset('layout/js/main.js') }}"></script>

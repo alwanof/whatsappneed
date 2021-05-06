@@ -2,7 +2,10 @@
 @section('title', 'Home')
 
 @section('content')
-
+    @php
+    $lang = Session::get('lang') ?? 'en';
+    app()->setLocale($lang);
+    @endphp
     <!-- ========================= hero-section start ========================= -->
     <section id="home" class="hero-section">
         <div class="container">
@@ -59,7 +62,7 @@
                                         <label for="note">{{ __('front.LEAD.NOTE') }}</label>
                                         <textarea class="form-control" name="note"
                                             placeholder="{{ __('front.LEAD.NOTE') }}" required>
-                                            </textarea>
+                                                </textarea>
                                     </div>
 
                                     <button class="btn btn-lg btn-success btn-block" type="submit">

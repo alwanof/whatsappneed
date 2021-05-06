@@ -24,7 +24,8 @@ Route::get('/payment', function () {
     return view('payment');
 });
 
-Route::get('/request/demo', 'LeadController@index');
+Route::get('/request/demo', 'LeadController@index')->name('lead.demo');
+Route::get('/set/lang/{lang}', 'LeadController@setLang')->name('lang.set');
 Route::post('/request/demo', 'LeadController@store');
 
 Route::get('/ip', function (Request $request) {

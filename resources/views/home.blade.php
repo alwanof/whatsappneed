@@ -3,7 +3,8 @@
 
 @section('content')
     @php
-    $lang = app()->getLocale();
+    $lang = Session::get('lang') ?? 'en';
+    app()->setLocale($lang);
     @endphp
     <!-- ========================= hero-section start ========================= -->
     <section id="home" class="hero-section">
@@ -15,7 +16,7 @@
                         <p class="wow fadeInUp" data-wow-delay=".6s">
                             {{ __('front.HERO.DESC') }}
                         </p>
-                        <a href="javascript:void(0)" class="main-btn border-btn btn-hover wow fadeInUp"
+                        <a href="{{ route('lead.demo') }}" class="main-btn border-btn btn-hover wow fadeInUp"
                             data-wow-delay=".6s">{{ __('front.HERO.BTN') }}</a>
                         <a href="#features" class="scroll-bottom"> <i class="lni lni-arrow-down"></i></a>
                     </div>
@@ -216,7 +217,7 @@
                                     </ul>
                                 </div>
                                 <div class="pricing-btn">
-                                    <a href="javascript:void(0)"
+                                    <a href="{{ route('lead.demo') }}"
                                         class="main-btn btn-hover border-btn">{{ __('front.PRICING.BTN') }}</a>
                                 </div>
                             </div>
@@ -236,7 +237,7 @@
                                     </ul>
                                 </div>
                                 <div class="pricing-btn">
-                                    <a href="javascript:void(0)"
+                                    <a href="{{ route('lead.demo') }}"
                                         class="main-btn btn-hover">{{ __('front.PRICING.BTN') }}</a>
                                 </div>
                             </div>
@@ -256,7 +257,7 @@
                                     </ul>
                                 </div>
                                 <div class="pricing-btn">
-                                    <a href="javascript:void(0)"
+                                    <a href="{{ route('lead.demo') }}"
                                         class="main-btn btn-hover border-btn">{{ __('front.PRICING.BTN') }}</a>
                                 </div>
                             </div>

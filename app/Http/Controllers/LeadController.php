@@ -4,9 +4,32 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Lead;
+use Illuminate\Support\Facades\App;
 
 class LeadController extends Controller
 {
+    private function getLang($lang)
+    {
+        $locale = $lang;
+        if (session()->has('lang')) {
+            App::setLocale(session()->get('lang'));
+            $locale = session()->get('lang');
+        } else {
+            session()->put('lang', $lang);
+            App::setLocale($lang);
+        }
+
+        return $locale;
+    }
+
+    public function setLang($lang)
+    {
+
+        session()->put('lang', $lang);
+        App::setLocale($lang);
+        return back();
+    }
+
     public function index()
     {
         return view('lead');
