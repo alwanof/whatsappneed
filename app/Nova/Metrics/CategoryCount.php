@@ -8,6 +8,10 @@ use Laravel\Nova\Metrics\Value;
 
 class CategoryCount extends Value
 {
+    public function name()
+    {
+        return __('Categories');
+    }
     /**
      * Calculate the value of the metric.
      *

@@ -8,6 +8,10 @@ use Laravel\Nova\Metrics\Value;
 
 class OrderCount extends Value
 {
+    public function name()
+    {
+        return __('Orders');
+    }
     /**
      * Calculate the value of the metric.
      *

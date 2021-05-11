@@ -21,7 +21,7 @@ class Category extends Resource
      */
     public static function label()
     {
-        return __('Categories');
+        return __('CATEGORIES');
     }
 
     /**
@@ -31,7 +31,7 @@ class Category extends Resource
      */
     public static function singularLabel()
     {
-        return __('Category');
+        return __('CATEGORY');
     }
     /**
      * The model the resource corresponds to.
@@ -78,7 +78,7 @@ class Category extends Resource
             Boolean::make(__('Featured'), "featured")
                 ->sortable()
                 ->default(0),
-            BelongsToMany::make(__("Items"), "items"),
+            BelongsToMany::make(__("ITEMS"), "items", "App\Nova\Item"),
 
 
         ];

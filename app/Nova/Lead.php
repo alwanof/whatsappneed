@@ -69,12 +69,12 @@ class Lead extends Resource
             Text::make(__('Name'), 'name'),
             Email::make(__('Email'), 'email'),
             PhoneNumber::make(__('Phone'), 'phone'),
-            Text::make('Title', function () {
+            Text::make(__('Title'), function () {
                 $title = json_decode($this->title);
                 return $title->package . '/' . $title->bundle;
             })->onlyOnIndex(),
-            Trix::make('Title', 'title'),
-            Trix::make('Note', 'note'),
+            Trix::make(__('Title'), 'title'),
+            Trix::make(__('Note'), 'note'),
             Badge::make(__('Status'), 'status', function () {
                 return $this->statusLabel($this->status);
             })

@@ -8,6 +8,10 @@ use Laravel\Nova\Metrics\Trend;
 
 class OrderTrend extends Trend
 {
+    public function name()
+    {
+        return __('Orders Trend');
+    }
     /**
      * Calculate the value of the metric.
      *

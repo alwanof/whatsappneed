@@ -99,7 +99,7 @@ class Driver extends Resource
                 ->rules('required', 'max:255'),
             Number::make(__('Distance'), 'distance')
                 ->onlyOnIndex(),
-            Boolean::make('Server Status', function () {
+            Boolean::make(__('Server Status'), function () {
                 $driver = User::findOrFail($this->hash);
                 if ($driver) {
                     return true;

@@ -8,6 +8,11 @@ use Laravel\Nova\Metrics\Partition;
 
 class ThreadPartition extends Partition
 {
+    public function name()
+    {
+        return __('Thread Trend');
+    }
+
     /**
      * Calculate the value of the metric.
      *

@@ -23,7 +23,7 @@ class Item extends Resource
      */
     public static function label()
     {
-        return __('Items');
+        return __('ITEMS');
     }
 
     /**
@@ -33,7 +33,7 @@ class Item extends Resource
      */
     public static function singularLabel()
     {
-        return __('Item');
+        return __('ITEM');
     }
     /**
      * The model the resource corresponds to.
@@ -86,11 +86,11 @@ class Item extends Resource
             Boolean::make(__('Available'), "available")
                 ->sortable()
                 ->withMeta(["value" => 1]),
-            Text::make(__("Category"), function () {
+            Text::make(__("CATEGORY"), function () {
                 return implode(', ', $this->categories()->pluck('title_a')->toArray());
             })->onlyOnIndex(),
-            BelongsToMany::make(__("Category"), "categories"),
-            BelongsToManyField::make(__("Category"), "categories", "App\Nova\Category")->onlyOnForms(),
+            BelongsToMany::make(__("CATEGORIES"), "categories", "App\Nova\Category"),
+            BelongsToManyField::make(__("CATEGORIES"), "categories", "App\Nova\Category")->onlyOnForms(),
 
             Avatar::make(__('Image1'), 'image1')->onlyOnDetail(),
             AdvancedImage::make(__('Image1'), 'image1')->croppable(16 / 9)->resize(1200)->disk('public')->path('item_image_1')->onlyOnForms(),
@@ -99,10 +99,25 @@ class Item extends Resource
             AdvancedImage::make(__('Image2'), 'image2')->croppable(16 / 9)->resize(1200)->disk('public')->path('item_image_2')->onlyOnForms(),
 
             Avatar::make(__('Image3'), 'image3')->onlyOnDetail(),
-            AdvancedImage::make(__('Image3'), 'image3')->croppable(16 / 9)->resize(1200)->disk('public')->path('item_image_2')->onlyOnForms(),
+            AdvancedImage::make(__('Image3'), 'image3')->croppable(16 / 9)->resize(1200)->disk('public')->path('item_image_3')->onlyOnForms(),
 
             Avatar::make(__('Image4'), 'image4')->onlyOnDetail(),
-            AdvancedImage::make(__('Image4'), 'image4')->croppable(16 / 9)->resize(1200)->disk('public')->path('item_image_2')->onlyOnForms(),
+            AdvancedImage::make(__('Image4'), 'image4')->croppable(16 / 9)->resize(1200)->disk('public')->path('item_image_4')->onlyOnForms(),
+
+            Avatar::make(__('Image5'), 'image5')->onlyOnDetail(),
+            AdvancedImage::make(__('Image5'), 'image5')->croppable(16 / 9)->resize(1200)->disk('public')->path('item_image_5')->onlyOnForms(),
+
+            Avatar::make(__('Image6'), 'image6')->onlyOnDetail(),
+            AdvancedImage::make(__('Image6'), 'image6')->croppable(16 / 9)->resize(1200)->disk('public')->path('item_image_6')->onlyOnForms(),
+
+            Avatar::make(__('Image7'), 'image7')->onlyOnDetail(),
+            AdvancedImage::make(__('Image7'), 'image7')->croppable(16 / 9)->resize(1200)->disk('public')->path('item_image_7')->onlyOnForms(),
+
+            Avatar::make(__('Image8'), 'image8')->onlyOnDetail(),
+            AdvancedImage::make(__('Image8'), 'image8')->croppable(16 / 9)->resize(1200)->disk('public')->path('item_image_8')->onlyOnForms(),
+
+            Avatar::make(__('Image9'), 'image9')->onlyOnDetail(),
+            AdvancedImage::make(__('Image9'), 'image9')->croppable(16 / 9)->resize(1200)->disk('public')->path('item_image_9')->onlyOnForms(),
             BelongsToMany::make(__('Orders'), 'orders', 'App\Nova\Order')
                 ->fields(function () {
                     return [

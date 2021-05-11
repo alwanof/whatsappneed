@@ -18,7 +18,7 @@ class Item extends Model
     public function getGalleryAttribute()
     {
         $res = [];
-        for ($i = 1; $i < 5; $i++) {
+        for ($i = 1; $i < 10; $i++) {
             $prop = 'image' . $i;
             if ($this->$prop) {
                 $res[] =  $this->$prop;

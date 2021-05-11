@@ -29,7 +29,7 @@ class Navigation extends Resource
      */
     public static function singularLabel()
     {
-        return __('Navigation');
+        return __('NAVIGATATION');
     }
     /**
      * The model the resource corresponds to.
@@ -75,7 +75,7 @@ class Navigation extends Resource
             Number::make(__('Order'), 'order')->default(0),
             Boolean::make(__('Top'), "top")
                 ->sortable(),
-            BelongsTo::make(__('Navigation'), 'navigation')->nullable()
+            BelongsTo::make(__('NAVIGATATION'), 'navigation', "App\Nova\Navigation")->nullable()
 
         ];
     }

@@ -8,6 +8,10 @@ use Laravel\Nova\Metrics\Partition;
 
 class DriverPartition extends Partition
 {
+    public function name()
+    {
+        return __('Drivers');
+    }
     /**
      * Calculate the value of the metric.
      *

@@ -8,6 +8,10 @@ use Laravel\Nova\Metrics\Value;
 
 class ItemCount extends Value
 {
+    public function name()
+    {
+        return __('Items');
+    }
     /**
      * Calculate the value of the metric.
      *
