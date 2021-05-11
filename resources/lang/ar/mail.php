@@ -3,13 +3,24 @@
 return [
 
 
-    'Hi' => 'Hi Admin,',
-    'INTRO' => 'This is an invoice for a recent purchase.',
-    'DESCRIPTION' => 'Description',
-    'AMOUNT' => 'Amount',
-    'SUBTOTAL' => 'Sub-Total',
-    'TOTAL' => 'Total',
-    'FOOTER' => 'If you’re having trouble with the button above, copy and paste the URL below into your web browser.',
+    'Hi' => 'مرحبا ادمين,',
+    'INTRO' => 'هذه فاتورة لعملية شراء حديثة.',
+    'DESCRIPTION' => 'وصف موجز ',
+    'AMOUNT' => 'مبلغ',
+    'SUBTOTAL' => 'المجموع الفرعي',
+    'TOTAL' => 'مجموع',
+    'FOOTER' => 'إذا كنت تواجه مشكلة مع الزر أعلاه ، فانسخ عنوان URL أدناه والصقه في متصفح الويب.',
+    'CUSTOMER' => [
+        'Hi' => 'مرحبا',
+        'INTRO' => 'شكرا لاهتمامك في منتجاتنا.',
+        'DESCRIPTION' => 'وصف موجز ',
+        'AMOUNT' => 'مبلغ',
+        'SUBTOTAL' => 'المجموع الفرعي',
+        'TOTAL' => 'مجموع',
+        'PREEFOOTER' => 'إذا كانت لديك أي أسئلة حول هذا الإيصال ، فما عليك سوى الرد على هذا البريد الإلكتروني أو التواصل مع فريق الدعم للحصول على المساعدة.',
+        'FOOTER' => 'إذا كنت تواجه مشكلة مع الزر أعلاه ، فانسخ عنوان URL أدناه والصقه في متصفح الويب.',
+
+    ]
 
 
 

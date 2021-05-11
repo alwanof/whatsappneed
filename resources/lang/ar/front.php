@@ -2,68 +2,68 @@
 
 return [
     'NAV' => [
-        'HOME' => ' الرئيسية',
-        'FEATURES' => 'Features',
-        'QRMENU' => 'QR Menu',
-        'HOW' => 'How it Works?',
-        'WHY' => 'Why us?',
-        'PRICING' => 'Pricing',
-        'CONTACT' => 'Contact',
-        'PP' => 'Privacy policy',
-        'TS' => 'Terms of service'
+        'HOME' => 'ﺍﻟﺮﺋﻴﺴﻴﺔ',
+        'FEATURES' => 'ﺍﻟﻤﻴﺰﺍﺕ',
+        'QRMENU' => 'QR ﻗﺎﺋﻤﺔ',
+        'HOW' => 'كيف تعمل؟',
+        'WHY' => 'لماذا نحن؟',
+        'PRICING' => 'التسعير',
+        'CONTACT' => 'تواصل',
+        'PP' => 'سياسة الخصوصية',
+        'TS' => 'شروط الخدمة'
 
     ],
     'HERO' => [
-        'TITLE' => 'Share your Products or Services Through WhatsApp ',
-        'DESC' => 'Upload & share your products or services, connect with your customer through WhatsApp, understand customers needs & communicate with them easier & faster',
+        'TITLE' => 'Whatsappneed ﺷﺎﺭﻙ ﻣﻨﺘﺠﺎﺗﻚ ﺃﻭ ﺧﺪﻣﺎﺗﻚ ﻣﻦ ﺧﻼﻝ ',
+        'DESC' => 'ﻗﻢ ﺑﺘﺤﻤﻴﻞ ﻭﻣﺸﺎﺭﻛﺔ ﻣﻨﺘﺠﺎﺗﻚ ﺃﻭ ﺧﺪﻣﺎﺗﻚ ﻭﺍﻟﺘﻮﺍﺻﻞ ﻣﻊ ﻋﻤﻴﻠﻚ ﻣﻦ ﺧﻼﻝ ﻭﺍﺗﺴﺎﺏ، ﺍﻓﻬﻢ ﺍﺣﺘﻴﺎﺟﺎﺕ ﺍﻟﻌﻤﻼﺀ ﻭﺗﻮﺍﺻﻞ ﻣﻌﻬﻢ ﺑﺸﻜﻞ ﺃﺳﻬﻞ ﻭﺃﺳﺮﻉ.',
 
-        'BTN' => 'Get Started'
+        'BTN' => 'ﻋﻴﺶ ﺍﻟﺘﺠﺮﺑﺔ'
     ],
     'FEATURES' => [
         0 => [
-            'TITLE' => 'Secure',
-            'DESC' => 'Ensure the conversations between your business and customers remain private with end-to-end encryption and multi-factor authentication'
+            'TITLE' => 'ﺃﻣﺎﻥ',
+            'DESC' => 'ﺍﻟﻤﺤﺎﺩﺛﺎﺕ ﺑﻴﻨﻚ ﻭﺑﻴﻦ ﺍﻟﻌﻤﻼﺀ ﺗﻈﻞ ﺧﺎﺻﺔ ﻣﻦ ﺧﻼﻝ ﺍﻟﺘﺸﻔﻴﺮ ﺍﻟﺸﺎﻣﻞ'
         ],
         1 => [
-            'TITLE' => 'Automated',
-            'DESC' => 'You can get the orders message, delivery link, track orders link & location, price and all this with one click'
+            'TITLE' => 'ﺁﻟﻲ',
+            'DESC' => 'ﻳﻤﻜﻨﻚ ﺍﻟﺤﺼﻮﻝ ﻋﻠﻰ ﺭﺳﺎﻟﺔ ﺍﻟﻄﻠﺒﺎﺕ، ﺭﺍﺑﻂ ﺍﻟﺘﺴﻠﻴﻢ، ﺭﺍﺑﻂ ﺗﺘﺒﻊ ﺍﻟﻄﻠﺒﺎﺕ، ﺍﻟﻤﻮﻗﻊ ﻭﺍﻟﺴﻌﺮ ﻛﻞ ﻫﺬﺍ ﺑﻨﻘﺮﺓ ﻭﺍﺣﺪﺓ'
         ],
         2 => [
-            'TITLE' => 'Easy to use',
-            'DESC' => 'Our dashboard is simple and easy to use. Once you have registered your informations it is stored in the algorithms of our site'
+            'TITLE' => 'ﺳﻬﻞ ﺍﻻﺳﺘﺨﺪﺍﻡ',
+            'DESC' => 'ﻟﻮﺣﺔ ﺍﻟﻘﻴﺎﺩﺓ ﻟﺪﻳﻨﺎ ﺑﺴﻴﻄﺔ ﻭﺳﻬﻠﺔ ﺍﻻﺳﺘﺨﺪﺍﻡ, ﺑﻤﺠﺮﺩ ﺗﺴﺠﻴﻞ ﻣﻌﻠﻮﻣﺎﺗﻚ ﻳﺘﻢ ﺗﺨﺰﻳﻨﻬﺎ ﻓﻲ ﺧﻮﺍﺭﺯﻣﻴﺎﺕ ﻣﻮﻗﻌﻨﺎ'
         ],
     ],
     'HOW1' => [
-        'TITLE' => 'Perfect Solution Thriving Online Business',
-        'DESC' => 'We are the only platform that provides professional online stores for small or large businesses and connect you with WhatsApp directly so you and customers can get in touch before purchasing the order, to create credibility and reliability for your business',
+        'TITLE' => 'ﺍﻟﺤﻞ ﺍﻟﻤﺜﺎﻟﻲ ﻟﻤﺘﺠﺮﻙ ﻋﺒﺮ ﺍﻹﻧﺘﺮﻧﺖ',
+        'DESC' => 'ﻧﺤﻦ ﺍﻟﻤﻨﺼﺔ ﺍﻟﻮﺣﻴﺪﺓ ﺍﻟﺘﻲ ﺗﻮﻓﺮ ﻣﺘﺎﺟﺮ ﺍﺣﺘﺮﺍﻓﻴﺔ ﻋﺒﺮ ﺍﻹﻧﺘﺮﻧﺖ ﻟﻠﺸﺮﻛﺎﺕ ﺍﻟﺼﻐﺮﻯ ﺃﻭ ﺍﻟﻜﺒﺮﻯ، ﻧﺮﺑﻄﻚ ﺑﻮﺍﺗﺴﺎﺏ ﻣﺒﺎﺷﺮﺓ ﺣﺘﻰ ﺗﺘﻤﻜﻦ ﺃﻧﺖ ﻭﺍﻟﻌﻤﻼﺀ ﻣﻦ ﺍﻟﺘﻮﺍﺻﻞ ﻣﺒﺎﺷﺮﺓ ﻭ ﺑﺴﻬﻮﻟﺔ.',
     ],
     'HOW2' => [
-        'TITLE' => 'Easy to Use with Tons of Awesome Features',
-        'DESC' => 'Our service has many advantages that facilitate the process of communication between you and your customers via WhatsApp. One of the most prominent features is the ability to add your delivery driver in the same control panel to connect more with your customers and give them the possibility to track the order.',
+        'TITLE' => 'ﺳﻬﻞ ﺍﻻﺳﺘﺨﺪﺍﻡ ﻣﻊ ﺍﻟﻜﺜﻴﺮ ﻣﻦ ﺍﻟﻤﻴﺰﺍﺕ ﺍﻟﺮﺍﺋﻌﺔ',
+        'DESC' => '.ﺗﺘﻤﺘﻊ ﺧﺪﻣﺘﻨﺎ ﺑﺎﻟﻌﺪﻳﺪ ﻣﻦ ﺍﻟﻤﺰﺍﻳﺎ ﺍﻟﺘﻲ ﺗﺴﻬﻞ ﻋﻤﻠﻴﺔ ﺍﻟﺘﻮﺍﺻﻞ ﺑﻴﻨﻚ ﻭﺑﻴﻦ ﻋﻤﻼﺋﻚ ﻋﺒﺮ ﻭﺍﺗﺴﺎﺏ. ﻣﻦ ﺃﺑﺮﺯ ﺍﻟﻤﻴﺰﺍﺕ ﺍﻟﻘﺪﺭﺓ ﻋﻠﻰ ﺇﺿﺎﻓﺔ ﺳﺎﺋﻖ ﺍﻟﺘﻮﺻﻴﻞ ﺍﻟﺨﺎﺹ ﺑﻚ ﻓﻲ ﻧﻔﺲ ﻟﻮﺣﺔ ﺍﻟﺘﺤﻜﻢ ﻟﻠﺘﻮﺍﺻﻞ ﺃﻛﺜﺮ ﻣﻊ ﻋﻤﻼﺋﻚ ﻭﻣﻨﺤﻬﻢ ﺇﻣﻜﺎﻧﻴﺔ ﺗﺘﺒﻊ ﺍﻟﻄﻠﺐ',
 
     ],
     'WHY' => [
-        'TITLE' => 'Why Choose whatsappneed',
-        'DESC' => 'With the Covid-19 Pandemic, some habits have changed. Whatsappneed provides you a new mode of life in the context of this health crisis.',
+        'TITLE' => 'whatsappneed ﻟﻤﺎﺫﺍ ﺗﺨﺘﺎﺭ',
+        'DESC' => 'ﻣﻊ ﺍﻧﺘﺸﺎﺭ ﺟﺎﺋﺤﺔ ﻛﻮﻓﻴﺪ ﺀ19 ، ﺗﻐﻴﺮﺕ ﺑﻌﺾ ﺍﻟﻌﺎﺩﺍﺕ. ﻳﻮﻓﺮ ﻟﻚ ﻭﺍﺗﺴﺎﺏ ﻧﻴﺪ ﻃﺮﻳﻘﺔ ﺟﺪﻳﺪﺓ ﻟﻠﺤﻴﺎﺓ ﻓﻲ ﺳﻴﺎﻕ ﻫﺬﻩ ﺍﻷﺯﻣﺔ ﺍﻟﺼﺤﻴﺔ.',
         'ITEMS' => [
             0 => [
-                'TITLE' => 'QR Creator',
-                'DESC' => 'You can create QR Code for your page links, delivery, and whatsapp No. from your dashboard to share your E-store via whatsapp or other social media ads easily'
+                'TITLE' => 'QR ﻛﻮﺩ',
+                'DESC' => '.ﻣﻦ ﻟﻮﺣﺔ ﺍﻟﻘﻴﺎﺩﺓ ﻟﻤﺸﺎﺭﻛﺔ ﻣﺘﺠﺮﻙ ﺍﻹﻟﻜﺘﺮﻭﻧﻲ ﻋﺒﺮ ﻭﺍﺗﺴﺎﺏ ﺃﻭ ﻋﺒﺮ ﻭﺳﺎﺋﻞ ﺍﻟﺘﻮﺍﺻﻞ ﺍﻻﺟﺘﻤﺎﻋﻲ ﺑﺴﻬﻮﻟﺔ QrCode ﻳﻤﻜﻨﻚ ﺇﻧﺸﺎﺀ'
             ],
             1 => [
-                'TITLE' => 'Online Store',
-                'DESC' => 'Create your online store with your name, brand name, logo, banner for your page and unlimited uploads, adjust your description and prices, no rules or conditions in your e-store you can add privacy and terms in your page and many  other features'
+                'TITLE' => 'ﻣﺘﺠﺮﻙ ﻋﻠﻰ ﺍﻻﻧﺘﺮﻧﺖ',
+                'DESC' => 'ﻗﻢ ﺑﺈﻧﺸﺎﺀ ﻣﺘﺠﺮﻙ ﻋﻠﻰ ﺍﻹﻧﺘﺮﻧﺖ ﺑﺎﺳﺘﺨﺪﺍﻡ ﺍﺳﻤﻚ ،ﺍﺳﻢ ﻋﻼﻣﺘﻚ ﺍﻟﺘﺠﺎﺭﻳﺔ ﻭﺷﻌﺎﺭﻙ ، ﺍﺿﺒﻂ ﺍﻟﻮﺻﻒ ﻭﺍﻷﺳﻌﺎﺭ ﺍﻟﺨﺎﺻﺔ ﺑﻚ ، ﻻ ﺗﻮﺟﺪ ﻗﻮﺍﻋﺪ ﺃﻭ ﺷﺮﻭﻁ ﻓﻲ ﻣﺘﺠﺮﻙ ﺍﻹﻟﻜﺘﺮﻭﻧﻲ ، ﻳﻤﻜﻨﻚ ﺇﺿﺎﻓﺔ ﺍﻟﺨﺼﻮﺻﻴﺔ ﻭﺍﻟﺸﺮﻭﻁ ﻓﻲ ﺻﻔﺤﺘﻚ ﻣﻊ ﺍﻟﻌﺪﻳﺪ ﻣﻦ ﺍﻟﻤﻴﺰﺍﺕ ﺍﻷﺧﺮﻯ.'
             ],
             2 => [
-                'TITLE' => 'Ready to Use',
-                'DESC' => 'After registering your business in our platform you will be able to create your digital menu to stand out and earn more engagement with your customers.'
+                'TITLE' => 'ﺟﺎﻫﺰ ﻟﻺﺳﺘﺨﺪﺍﻡ',
+                'DESC' => 'ﺑﻌﺪ ﺗﺴﺠﻴﻞ ﻣﺘﺠﺮﻛﻢ ﻓﻲ ﻣﻨﺼﺘﻨﺎ ، ﺳﺘﺘﻤﻜﻦ ﻣﻦ ﺇﻧﺸﺎﺀ ﻗﺎﺋﻤﺘﻚ ﺍﻟﺮﻗﻤﻴﺔ ﻟﻠﺘﻤﻴﺰ ﻭﻛﺴﺐ ﺍﻟﻤﺰﻳﺪ ﻣﻦ ﺍﻟﻤﺸﺎﺭﻛﺔ ﻣﻊ ﻋﻤﻼﺋﻚ.'
             ]
         ]
     ],
     'PRICING' => [
-        'TITLE' => 'Choose a Plan',
-        'DESC' => 'Choose one of our plans and make your business interactive',
-        'BTN' => 'Get Start',
+        'TITLE' => 'ﺍﺧﺘﺮ ﺧﻄﺔ',
+        'DESC' => 'ﺍﺧﺘﺮﺇﺣﺪﻯ ﺧﻄﻄﻨﺎ ﻭﺍﺟﻌﻞ ﺗﺠﺎﺭﺗﻚ ﺗﻔﺎﻋﻠﻴﺔ',
+        'BTN' => 'ﻋﻴﺶ ﺍﻟﺘﺠﺮﺑﺔ',
         'ITEMS' => [
             0 => [
                 'PRICE' => '$36',
@@ -110,32 +110,32 @@ return [
         ]
     ],
     'CONTACT' => [
-        'TITLE' => 'Lorem ipsum dolor sit amet',
-        'DESC' => 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Id nobis voluptas inventore?',
-        'NAME' => 'Name',
-        'PHONE' => 'Phone',
+        'TITLE' => 'تواصل معنا',
+        'DESC' => ': ﺍﻭ ﻋﺒﺮ ﺍﻟﻮﺍﺗﺴﺎﺏ ﻋﻠﻰ ﺍﻟﺮﻗﻢ ﺍﻟﺘﺎﻟﻲ info@whatsappneed.com: ﻟﻠﻤﺰﻳﺪ ﻣﻦ ﺍﻟﻤﻌﻠﻮﻣﺎﺕ ﻳﻤﻜﻨﻜﻢ ﺍﻟﺘﻮﺍﺻﻞ ﻣﻌﺎﻧﺎ ﻋﺒﺮ ﺍﻟﺒﺮﻳﺪ ﺍﻻﻟﻜﺘﺮﻭﻧﻲ',
+        'NAME' => 'ﻢﺳﺍ',
+        'PHONE' => 'رقم الهاتف',
         'COMPANY' => 'whatsappneed',
-        'SEND' => 'Send',
+        'SEND' => 'ﻝﺎﺳﺭﺇ',
     ],
     'FOOTER' => 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed dinonumy eirmod tempor invidunt.',
     'LEAD' => [
-        'DEMO' => 'ابدأ حساب تجريبي(3 اشهر مجانا)',
-        'NAME' => 'Your Name',
-        'EMAIL' => 'Your Email',
-        'PHONE' => 'Your Phone',
+        'DEMO' => 'ﺍﻓﺘﺢ ﺣﺴﺎﺑًﺍ ﺗﺠﺮﻳﺒﻴًﺍ ﺣﺴﺎﺏ(3 ﺷﻬﻮﺭ)',
+        'NAME' => 'ﺍﻻﺳﻢ',
+        'EMAIL' => 'بريدك الالكتروني',
+        'PHONE' => 'رقم تليفونك',
         'PACKAGE' => 'Package',
         'PACKAGES' => [
             'BASIC' => 'Basic',
             'STANDARD' => 'Standard',
             'PROFESSIONAL' => 'Professional'
         ],
-        'BUNDLE' => 'BUNDLE',
-        'MONTHS' => 'Months',
-        'NOTE' => 'Your Note',
-        'GET_STARTED' => 'Get Started',
+        'BUNDLE' => 'حزم',
+        'MONTHS' => 'شهور',
+        'NOTE' => 'ملاحظاتك',
+        'GET_STARTED' => 'البدء',
         'SUCCESS' => [
-            'TITLE' => 'Thank you for getting in touch!',
-            'BODY' => 'We appreciate you contacting us. One of our colleagues will get back in touch with you soon!Have a great day!'
+            'TITLE' => 'شكرا لك على تواصلك!',
+            'BODY' => 'نحن نقدر اتصالك بنا. سيتواصل معك أحد زملائنا قريبًا! نتمنى لك يومًا سعيدًا!'
         ]
 
     ]
