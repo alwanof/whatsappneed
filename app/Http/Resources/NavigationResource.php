@@ -20,7 +20,7 @@ class NavigationResource extends JsonResource
             $link = env('BASE_URL') . '/?category=' . $this->category_id;
         }
         if ($this->page_id) {
-            $link = env('BASE_URL') . '/?page=' . $this->page_id;
+            $link = env('BASE_URL') . '/pages/' . $this->page_id;
         }
         return [
             'id' => $this->id,
