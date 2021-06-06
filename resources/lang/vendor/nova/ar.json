@@ -513,7 +513,10 @@
   "Distance": "المسافة",
   "Server Status": " حالة الخادم",
   "Hash": "Hash",
-  "Drivers": "السائقين"
+  "Drivers": "السائقين",
+  "Original Price": "السعر الاصلي",
+  "Tag Main": "تاغ السعر اصلي",
+  "Tag Al": "تاغ السعر  بديل"
 
 
 }

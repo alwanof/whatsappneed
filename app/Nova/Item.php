@@ -12,6 +12,7 @@ use Laravel\Nova\Fields\Boolean;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Number;
 use Laravel\Nova\Fields\Text;
+use Laravel\Nova\Fields\Trix;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
 class Item extends Resource
@@ -77,8 +78,11 @@ class Item extends Resource
             Text::make(__('Title Alt'), 'title_b')
                 ->sortable()
                 ->rules('max:72'),
-            Text::make(__('Description Main'), 'desc_a')->hideFromIndex(),
-            Text::make(__('Description Alt'), 'desc_b')->hideFromIndex(),
+            Trix::make(__('Description Main'), 'desc_a')->hideFromIndex(),
+            Trix::make(__('Description Alt'), 'desc_b')->hideFromIndex(),
+            Number::make(__('Original Price'), 'original_price')->hideFromIndex(),
+            Text::make(__('Tag Main'), 'tag_a')->hideFromIndex(),
+            Text::make(__('Tag Alt'), 'tag_b')->hideFromIndex(),
             Number::make(__('Price'), 'price')
                 ->sortable()
                 ->rules('required', 'min:0'),
