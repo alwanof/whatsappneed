@@ -21,7 +21,7 @@ class ItemController extends Controller
         $user = User::where('slug', '=', $slug)->firstOrFail();
         $items = Item::where('user_id', $user->id);
 
-        $limit = ($request->input('limit') && $request->input('limit') <= 100) ? $request->input('limit') : 25;
+        $limit = ($request->input('limit') && $request->input('limit') <= 100) ? $request->input('limit') : 50;
         $item = ResourcesItem::collection($items->paginate($limit));
         return $item->response()->setStatusCode(200);
     }

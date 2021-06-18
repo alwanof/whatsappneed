@@ -476,7 +476,7 @@ $lang = app()->getLocale();
                                 <tr>
                                     <td class="content-cell">
                                         <div class="f-fallback">
-                                            <h1>{{ __('mail.CUSTOMER.Hi') $data['order']['name'], }}</h1>
+                                            <h1>{{ __('mail.CUSTOMER.Hi') }} {{$data['order']['name']}},</h1>
                                             <p>{{ __('mail.CUSTOMER.INTRO') }}</p>
                                             <table class="attributes" width="100%" cellpadding="0" cellspacing="0"
                                                 role="presentation">
